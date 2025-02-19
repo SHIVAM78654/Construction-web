@@ -1,6 +1,14 @@
 import React from "react";
+import img1 from "../assets/image1.jpg";
+import img2 from "../assets/image2.jpg";
+import img3 from "../assets/image3.jpg";
+import img4 from "../assets/image4.jpg";
+import img5 from "../assets/image5.jpg";
+import img6 from "../assets/image6.jpg";
 
 const Projects = () => {
+  const projectImages = [img1, img2, img3, img4, img5, img6];
+  
   return (
     <div className="bg-gray-100 py-12 px-6">
       {/* Header Section */}
@@ -26,10 +34,10 @@ const Projects = () => {
 
       {/* Projects Grid */}
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {Array.from({ length: 6 }).map((_, index) => (
+        {projectImages.map((image, index) => (
           <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
             <img
-              src={`https://source.unsplash.com/400x300/?construction,building${index}`}
+              src={image}
               alt={`Project ${index + 1}`}
               className="w-full h-56 object-cover"
             />
